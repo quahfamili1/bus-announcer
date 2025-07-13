@@ -83,8 +83,6 @@ async function getNextBusArrival() {
   }
 }
 
-app.listen(port, () => {
-  const listenMessage = `Bus announcer app listening at http://localhost:${port}\n`;
-  console.log(listenMessage);
-  fs.appendFileSync('app.log', listenMessage, { flag: 'a' }); // Log startup to file
-});
+// Export the app for Vercel
+module.exports = app;
+
